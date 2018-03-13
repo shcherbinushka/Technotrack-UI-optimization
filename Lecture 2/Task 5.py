@@ -20,16 +20,21 @@ def bubble_sort_set(array):
     return array,n
 
 
-print("Введите количество строк в двумерном массиве.")
-lines = int(input())
+print("Введите количество строк в двумерном массиве.") 
+lines = int(input()) 
+print("Введите количество элементов в строке") 
+elements = int(input()) 
 
 A = []
-for i in range(lines):
-    A.append([0] * lines)
 
-print("Введите элементы массива через пробел. Один массив - одна строка.")
-for i in range(lines):
-    A[i] = list(map(int, input().split()))
+
+print("Введите элементы массива по одному в каждой строке.") 
+print("Обратите внимание, что каждому массиву соответствует строго указанное количество элементов")
+for i in range(lines): #ввод двумерного массива по одному элементу в строку
+    A.append([]) 
+    for j in range(elements): 
+        el = int(input()) 
+        A[i].append(el) 
 
 for i in range(len(A)):
     if i % 2 == 0:
