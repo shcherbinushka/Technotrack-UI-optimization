@@ -24,7 +24,7 @@ for i in range(lines): #ввод двумерного массива по одн
     for j in range(elements): 
         el = int(input()) 
         A[i].append(el) 
-        print(A)
+        
 
 for i in range(len(A)):
     if i % 2 != 0:
