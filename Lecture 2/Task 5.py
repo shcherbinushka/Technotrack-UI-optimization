@@ -1,5 +1,5 @@
 n = 0
-def bubble_sort_rise(array):
+def bubble_sort(array):
     N = len(array)
     n = 0
     for bypass in range(1, N): ## bypass - номер прохода массива
@@ -9,17 +9,6 @@ def bubble_sort_rise(array):
                 n += 1
     return array,n
         
-def bubble_sort_set(array):
-    N = len(array)
-    n = 0
-    for bypass in range(1, N): ## bypass - номер прохода массива
-        for k in range(0, N - bypass):
-            if array[k] < array[k + 1]:
-                array[k], array[k + 1] = array[k + 1], array[k]
-                n += 1
-    return array,n
-
-
 print("Введите количество строк в двумерном массиве.") 
 lines = int(input()) 
 print("Введите количество элементов в строке") 
@@ -39,12 +28,13 @@ for i in range(lines): #ввод двумерного массива по одн
 for i in range(len(A)):
     if i % 2 == 0:
         array = A[i]
-        array,n1 = bubble_sort_rise(array)
+        array,n1 = bubble_sort(array)
         n += n1
         
     else:
         array = A[i]
-        array,n2 = bubble_sort_set(array)
+        array,n2 = bubble_sort(array)
+        array.reverse()
         n += n2
         
 for i in range(len(A)):
@@ -54,3 +44,4 @@ for i in range(len(A)):
     
 
 print('Количество итераций =', n)
+
